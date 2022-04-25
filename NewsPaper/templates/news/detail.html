@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load custom_filters %}
+
+{% block title %}
+<h3 align="center"> Более подробно </h3>
+{% endblock title %}
+
+<p>{% block content %}</p>
+{{ new.title }} /{{ new.date }}/ {{ new.newCategory }}
+
+</br>
+</br>
+{{ new.text }}
+</br>
+</br>
+<button> <a href="{% url 'news' %}"> К НОВОСТЯМ </a> </button>
+{% endblock content %}

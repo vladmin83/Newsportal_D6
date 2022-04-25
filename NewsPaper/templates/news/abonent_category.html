@@ -1,0 +1,18 @@
+{% block content %}
+<hr>
+<h3 align="center"> Предлагаем Вам -  {{request.user.username}} подписаться на новые статьи </h3>
+<h3 align="center"> для этого выберите категорию и нажмите клавишу Подписаться</h3>
+   <form method="POST">
+    {% csrf_token %}
+   <h3 align="center">
+   <select multiple="multiple" name="Подписка" id="Подписка"  size="4" >
+       {% for category in abonent_category  %}
+            <option value= {{ category.id }} > {{ category }} </option>
+       {% endfor %}
+   </select>
+   <hr>
+   <input type="submit" value="Подписаться"></form>
+   <button> <a href="..">Продолжить без подписки</a> </button>
+   </h3>
+<hr>
+{% endblock content %}

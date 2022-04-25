@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<h3 align="center"> Удаление поста </h3>
+{% endblock title %}
+
+{% block content %}
+<h2>Вы действительно хотите удалить данный пост?</h2>
+{{ new.title }} /{{ new.date }}/
+</br>
+{{ new.text }}
+</br>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" value="подтвердить"></form>
+{% endblock content %}
+
